@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog MDX`,
-    author: `Matt Hagner`,
-    description: `An extension of the gatsby starter blog, with support for MDX`,
-    siteUrl: `https://gatsby-starter-blog-mdx-demo.netlify.com/`,
+    title: `Mannie Schumpert`,
+    author: `Mannie Schumpert`,
+    description: `A new Gatsby site.`,
+    siteUrl: `https://mannieschumpert.com/`,
     social: {
-      twitter: `mattinthecouch`,
+      twitter: `mannieschumpert`,
     },
   },
   plugins: [
@@ -95,6 +95,7 @@ module.exports = {
             query: `
             {
               allMdx(
+                filter: { frontmatter: { published: { ne: false } } },
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
               ) {
@@ -114,7 +115,7 @@ module.exports = {
             }
             `,
             output: '/rss.xml',
-            title: 'Gatsby RSS feed',
+            title: 'Mannie Schumpert RSS feed',
           },
         ],
       },
